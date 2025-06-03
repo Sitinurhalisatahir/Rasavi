@@ -1,1 +1,1 @@
-package main.java.temurasa.database;
+package temurasa.database;

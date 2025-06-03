@@ -1,4 +1,4 @@
-package main.java.temurasa.database;
+package temurasa.database;
 
 public class MenuDAO {
     
