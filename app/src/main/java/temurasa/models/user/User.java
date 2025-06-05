@@ -4,13 +4,12 @@ public class User {
     private String name;
     private String email;
     private String password;
-    protected String role;
 
-    public User(String id, String name, String email, String password, String role) {
+
+    public User(String id, String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = encryptPassword(password); 
-        this.role = role;
     }
     public String getName() { 
         return name; 
@@ -26,11 +25,8 @@ public class User {
     private String encryptPassword(String password) {
         return "hashed_" + password;
     }
-    protected boolean validateCredentials(String email, String password) {
+    public boolean validateCredentials(String email, String password) {
         return this.email.equals(email) && this.password.equals(encryptPassword(password));
     }
 
     }
-    
-    
-

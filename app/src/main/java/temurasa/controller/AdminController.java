@@ -1,4 +1,4 @@
-package main.java.temurasa.controller;
+package temurasa.controller;
 public class AdminController {
     
 }
