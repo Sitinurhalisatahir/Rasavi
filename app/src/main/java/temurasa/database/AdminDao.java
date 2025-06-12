@@ -1,5 +1,5 @@
 package temurasa.database;
 
-public class OrderDao {
+public class AdminDao {
     
 }

@@ -1,5 +1,5 @@
 package temurasa.models;
 
-public class Menu {
+public class Admin {
     
 }
