@@ -1,5 +1,5 @@
 package temurasa.models;
 
-public class Admin {
+public class User {
     
 }
