@@ -1,5 +1,5 @@
 package temurasa.database;
 
-public class MenuDAO {
+public class MenuDao {
     
 }
