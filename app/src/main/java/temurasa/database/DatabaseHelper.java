@@ -2,7 +2,7 @@ package temurasa.database;
 
 import java.sql.*;
 
-public class DataBaseHelper {
+public class DatabaseHelper {
     public static final String URL = "jdbc:sqlite:temurasa.db";
 
     public static Connection getConnection() throws SQLException {
