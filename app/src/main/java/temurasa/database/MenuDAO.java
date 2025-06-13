@@ -93,28 +93,6 @@ public class MenuDAO {
         }
     }
 
-    public Menu getMenuById(int id) {
-        String sql = "SELECT * FROM menu WHERE id=?";
-        try (Connection conn = DatabaseHelper.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                return new Menu(
-                    rs.getInt("id"),
-                    rs.getString("nama_item"),
-                    rs.getDouble("harga"),
-                    rs.getString("kategori"),
-                    rs.getInt("stok"),
-                    rs.getString("created_at")
-                );
-            }
-        } catch (SQLException e) {
-            System.err.println("Gagal mengambil menu by id: " + e.getMessage());
-        }
-        return null;
-    }
-
     public boolean isNamaMenuExist(String namaItem) {
         String sql = "SELECT 1 FROM menu WHERE nama_item = ?";
         try (Connection conn = DatabaseHelper.getConnection();

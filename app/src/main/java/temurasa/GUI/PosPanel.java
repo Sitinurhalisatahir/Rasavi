@@ -13,9 +13,8 @@ import javafx.scene.text.FontWeight;
 import temurasa.models.Menu;
 import temurasa.models.Order;
 import temurasa.models.OrderItem;
-import temurasa.controllers.MenuController;
-import temurasa.controllers.OrderController;
 import temurasa.database.MenuDAO;
+import temurasa.database.OrderDAO;
 
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
@@ -44,8 +43,8 @@ public class PosPanel extends VBox {
     private NumberFormat currencyFormat;
 
     // Controller
-    private final MenuController menuController = new MenuController();
-    private final OrderController orderController = new OrderController();
+    private MenuDAO menuDao = new MenuDAO();
+    private OrderDAO orderDao = new OrderDAO();
 
     public PosPanel(String username) {
         this.currentUser = username;
@@ -270,7 +269,7 @@ public class PosPanel extends VBox {
 
     private void loadMenuItems() {
         menuItems = FXCollections.observableArrayList();
-        List<Menu> items = menuController.getAll();
+        List<Menu> items = menuDao.getAllMenu();
         menuItems.addAll(items);
         if (menuTable != null) {
             menuTable.setItems(menuItems);
@@ -422,9 +421,9 @@ public class PosPanel extends VBox {
                         currentUser,
                         LocalDateTime.now(),
                         totalAmount);
-                int orderId = orderController.tambahOrderReturnId(order);
+                int orderId = orderDao.insertOrder(order);
                 if (orderId > 0) {
-                    boolean success = orderController.tambahItemKeOrder(orderId, orderItems);
+                    boolean success = orderDao.insertOrderItems(orderId, orderItems);
                     if (success) {
                         MenuDAO menuDao = new MenuDAO();
                         for (OrderItem item : orderItems) {

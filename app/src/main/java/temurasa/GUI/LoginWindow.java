@@ -9,9 +9,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import temurasa.controllers.UserController;
-import temurasa.models.User;
 import temurasa.abstracts.ShowScene;
+import temurasa.database.AdminDao;
+import temurasa.util.PasswordUtils;
 
 public class LoginWindow implements ShowScene {
     private Stage stage;
@@ -34,20 +34,20 @@ public class LoginWindow implements ShowScene {
         VBox mainContainer = new VBox(20);
         mainContainer.setAlignment(Pos.CENTER);
         mainContainer.setPadding(new Insets(40));
-        mainContainer.setStyle("-fx-background-color: linear-gradient(to bottom, #8B4844 0%, #6B2C28 50%, #4A1F1C 100%);");
-        
+        mainContainer
+                .setStyle("-fx-background-color: linear-gradient(to bottom, #8B4844 0%, #6B2C28 50%, #4A1F1C 100%);");
+
         VBox loginCard = new VBox(25);
         loginCard.setAlignment(Pos.CENTER);
         loginCard.setPadding(new Insets(45));
         loginCard.setMaxWidth(420);
         loginCard.setStyle(
-            "-fx-background-color: rgba(255, 255, 255, 0.95); " +
-            "-fx-background-radius: 20; " +
-            "-fx-border-radius: 20; " +
-            "-fx-border-color: #D4B996; " +
-            "-fx-border-width: 2; " +
-            "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0, 0, 8);"
-        );
+                "-fx-background-color: rgba(255, 255, 255, 0.95); " +
+                        "-fx-background-radius: 20; " +
+                        "-fx-border-radius: 20; " +
+                        "-fx-border-color: #D4B996; " +
+                        "-fx-border-width: 2; " +
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0, 0, 8);");
 
         Label titleLabel = new Label("TEMU RASA");
         titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 36));
@@ -75,14 +75,13 @@ public class LoginWindow implements ShowScene {
         usernameField.setPromptText("Enter your username");
         usernameField.setPrefHeight(45);
         usernameField.setStyle(
-            "-fx-font-size: 14; " +
-            "-fx-padding: 12; " +
-            "-fx-background-color: #FEFEFE; " +
-            "-fx-border-color: #D4B996; " +
-            "-fx-border-width: 1.5; " +
-            "-fx-border-radius: 8; " +
-            "-fx-background-radius: 8;"
-        );
+                "-fx-font-size: 14; " +
+                        "-fx-padding: 12; " +
+                        "-fx-background-color: #FEFEFE; " +
+                        "-fx-border-color: #D4B996; " +
+                        "-fx-border-width: 1.5; " +
+                        "-fx-border-radius: 8; " +
+                        "-fx-background-radius: 8;");
         usernameContainer.getChildren().addAll(usernameLabel, usernameField);
 
         VBox passwordContainer = new VBox(8);
@@ -93,14 +92,13 @@ public class LoginWindow implements ShowScene {
         passwordField.setPromptText("Enter your password");
         passwordField.setPrefHeight(45);
         passwordField.setStyle(
-            "-fx-font-size: 14; " +
-            "-fx-padding: 12; " +
-            "-fx-background-color: #FEFEFE; " +
-            "-fx-border-color: #D4B996; " +
-            "-fx-border-width: 1.5; " +
-            "-fx-border-radius: 8; " +
-            "-fx-background-radius: 8;"
-        );
+                "-fx-font-size: 14; " +
+                        "-fx-padding: 12; " +
+                        "-fx-background-color: #FEFEFE; " +
+                        "-fx-border-color: #D4B996; " +
+                        "-fx-border-width: 1.5; " +
+                        "-fx-border-radius: 8; " +
+                        "-fx-background-radius: 8;");
         passwordContainer.getChildren().addAll(passwordLabel, passwordField);
 
         formContainer.getChildren().addAll(usernameContainer, passwordContainer);
@@ -112,27 +110,25 @@ public class LoginWindow implements ShowScene {
         actionButton.setPrefWidth(130);
         actionButton.setPrefHeight(50);
         actionButton.setStyle(
-            "-fx-background-color: #8B4844; " +
-            "-fx-text-fill: white; " +
-            "-fx-font-size: 15; " +
-            "-fx-font-weight: bold; " +
-            "-fx-background-radius: 10; " +
-            "-fx-border-radius: 10; " +
-            "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);"
-        );
+                "-fx-background-color: #8B4844; " +
+                        "-fx-text-fill: white; " +
+                        "-fx-font-size: 15; " +
+                        "-fx-font-weight: bold; " +
+                        "-fx-background-radius: 10; " +
+                        "-fx-border-radius: 10; " +
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);");
 
         toggleButton = new Button("REGISTER");
         toggleButton.setPrefWidth(130);
         toggleButton.setPrefHeight(50);
         toggleButton.setStyle(
-            "-fx-background-color: #D4B996; " +
-            "-fx-text-fill: #4A1F1C; " +
-            "-fx-font-size: 15; " +
-            "-fx-font-weight: bold; " +
-            "-fx-background-radius: 10; " +
-            "-fx-border-radius: 10; " +
-            "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);"
-        );
+                "-fx-background-color: #D4B996; " +
+                        "-fx-text-fill: #4A1F1C; " +
+                        "-fx-font-size: 15; " +
+                        "-fx-font-weight: bold; " +
+                        "-fx-background-radius: 10; " +
+                        "-fx-border-radius: 10; " +
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);");
 
         buttonContainer.getChildren().addAll(actionButton, toggleButton);
 
@@ -142,11 +138,10 @@ public class LoginWindow implements ShowScene {
         messageLabel.setMaxWidth(370);
         messageLabel.setAlignment(Pos.CENTER);
         messageLabel.setStyle(
-            "-fx-padding: 10; " +
-            "-fx-background-color: rgba(255, 255, 255, 0.8); " +
-            "-fx-background-radius: 5; " +
-            "-fx-border-radius: 5;"
-        );
+                "-fx-padding: 10; " +
+                        "-fx-background-color: rgba(255, 255, 255, 0.8); " +
+                        "-fx-background-radius: 5; " +
+                        "-fx-border-radius: 5;");
 
         actionButton.setOnAction(e -> handleAction());
         toggleButton.setOnAction(e -> toggleMode());
@@ -154,9 +149,8 @@ public class LoginWindow implements ShowScene {
         usernameField.setOnAction(e -> passwordField.requestFocus());
 
         loginCard.getChildren().addAll(
-            titleLabel, subtitleLabel, decorativeLine, formContainer,
-            buttonContainer, messageLabel
-        );
+                titleLabel, subtitleLabel, decorativeLine, formContainer,
+                buttonContainer, messageLabel);
 
         mainContainer.getChildren().add(loginCard);
 
@@ -164,7 +158,8 @@ public class LoginWindow implements ShowScene {
         stage.setScene(scene);
     }
 
-    private UserController userController = new UserController();
+    private AdminDao admin = new AdminDao();
+
     private void handleAction() {
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
@@ -174,8 +169,15 @@ public class LoginWindow implements ShowScene {
             return;
         }
 
+        if (password.length() < 7) {
+            showMessage("Password must be at least 7 characters long!", Color.web("#C62828"));
+            return;
+        }
+
+        String hashedPassword = PasswordUtils.hashPassword(password);
+
         if (isLoginMode) {
-            boolean success = userController.authenticate(username, password);
+            boolean success = admin.authenticate(username, hashedPassword);
             if (success) {
                 showMessage("Login successful! Welcome back.", Color.web("#2E7D32"));
                 MainWindow mainWindow = new MainWindow(username);
@@ -185,17 +187,23 @@ public class LoginWindow implements ShowScene {
                 showMessage("Invalid username or password. Please try again.", Color.web("#C62828"));
             }
         } else {
-            User user = new User(username, password);
-            boolean success = userController.tambahUser(user);
-            if (success) {
-                showMessage("Registration successful! You can now login with your new account.", Color.web("#2E7D32"));
-                isLoginMode = true;
-                updateButtonText();
+            // Registration mode
+            if (admin.isAdminExist(username)) {
+                showMessage("Registration failed! Username already exists.", Color.web("#C62828"));
             } else {
-                showMessage("Registration failed! Username might already exist.", Color.web("#C62828"));
+                boolean success = admin.insertAdmin(username, hashedPassword);
+                if (success) {
+                    showMessage("Registration successful! You can now login with your new account.",
+                            Color.web("#2E7D32"));
+                    isLoginMode = true;
+                    updateButtonText();
+                } else {
+                    showMessage("Registration failed! Please try again.", Color.web("#C62828"));
+                }
             }
         }
     }
+
     private void toggleMode() {
         isLoginMode = !isLoginMode;
         updateButtonText();
