@@ -1,53 +1,142 @@
 # TemuRasa
 
 ### Deskripsi Singkat
-
 Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis (GUI) yang dirancang khusus untuk mengelola operasional restoran secara efisien dan profesional. Aplikasi ini mengimplementasikan prinsip-prinsip Object-Oriented Programming (OOP) yang solid dan memanfaatkan database SQLite untuk penyimpanan data yang handal dan terstruktur
 
 ---
 
-### Fitur Utama
-
-### Login dan Register
-- Admin akan diarahkan login atau register
-- Saat Admin belum punya akun akan diarahkan ke register untuk membuat username dan password baru
-- Saat Admin sudah punya akun akan, admin hanya perlu login saja
-
-  ### UI Login dan Register
-   <img width="384" alt="image" src="https://github.com/user-attachments/assets/bfb0da3c-23ab-43be-970d-3b3400888bfd" />
-
-  ## Point Of Sale
-  <img width="957" alt="image" src="https://github.com/user-attachments/assets/9fde6c95-db23-4079-8b0a-be29304a3c16" />
+### 👥Anggota Kelompok
+**Marche Gatriani Sude (H071241054)**
+**Shabrina Zahra Ramadhani (H071241045)**
+**Siti Nur Halisa tahir (H071241086)**
 
 
-  1. Input nama customer
-  2. Menu Items berisi nama dan kategori
-  3. Saat telah menambahkan orderan akan masuk di tabel Orderan Saat Ini. Pada tabel Orderan Saat Ini akan akan mencetak Itemnya apa, kuantitas dan Harga Per-Unit dan     a       Subtotalnya lalu mencetak total harga
-  4. pada tombol di bawah tabel Orderan yang berisi: - Hapus Item: Menghapus item tertentu atau yang dipilih
-                                                     - Kurangkan Item: Mengurangi satu item yang dipillih
-                                                     - Hapus Order: Menghapus semua isi pada tabel Orderan Saat Ini
-                                                     - Proses Order: Memproses hasil order ke laporan penjualan
+---
 
+###  🍽️ Tema
+**Restoran dan Kuliner:** Aplikasi Manajemen Menu dan Proses Makanan dan Minuman
 
-### Manajemen Menu
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/558c096f-e74e-4450-84e7-e24ae202a3f5" />
+---
 
+### 📋 Fitur Utama dan Tampilan Aplikasi
 
-1. Menu Items berisi nama, kategori, harga, dan stok
-2. Tabel Menu Items Details yang berisi Nama, Kategori (Makanan dan Minuman), Harga dan Stok
-3. Tombol di bawah tabel Menu Items Details: -Tambah: Menambahkan nama, kategori, harga, dan stok pada Menu Items
-                                             - Update: Memperbarui seperti nama, kategori, dll
-                                             - Hapus: Menghapus semua yang ada pada tabel Menu Items Details
+### 🔐 Login dan Register
+<img width="384" alt="image" src="https://github.com/user-attachments/assets/bfb0da3c-23ab-43be-970d-3b3400888bfd" />
+
+1. Admin akan diarahkan login atau register
+2. Saat Admin belum punya akun akan diarahkan ke register untuk membuat username dan password baru
+3. Saat Admin sudah punya akun akan, admin hanya perlu login saja
    
 
-### Laporan Penjualan
+  ### 💰 Point of Sale (Kasir)
+  <img width="957" alt="image" src="https://github.com/user-attachments/assets/9fde6c95-db23-4079-8b0a-be29304a3c16" />
+  
+  1. Input nama customer - Memasukkan identitas pelanggan
+  2. Menu Items - Katalog berisi nama dan kategori makanan/minuman
+  3. Tabel Orderan Saat Ini - Menampilkan:
+       Item yang dipesan
+        - Kuantitas
+        - Harga per unit
+        - Subtotal per item
+        - Total keseluruhan harga
+
+  4. Kontrol Pesanan - Tombol manajemen:
+     🗑️ Hapus Item: Menghapus item tertentu yang dipilih
+     ➖ Kurangkan Item: Mengurangi satu item yang dipilih
+     🗑️ Hapus Order: Menghapus semua isi pada tabel Orderan Saat Ini
+     ✅ Proses Order: Memproses hasil order ke laporan penjualan
+
+
+### 📝 Manajemen Menu
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/558c096f-e74e-4450-84e7-e24ae202a3f5" />
+
+1. Menu Items - Database berisi nama, kategori, harga, dan stok
+   
+2. Tabel Menu Items Details - Menampilkan:
+   - Nama item
+   - Kategori (Makanan dan Minuman)
+   - Harga
+   - Stok tersedia
+
+3. Operasi CRUD - Tombol kontrol:
+    ➕ Tambah: Menambahkan nama, kategori, harga, dan stok pada Menu Items
+    ✏️ Update: Memperbarui informasi seperti nama, kategori, harga, dll
+    🗑️ Hapus: Menghapus item yang dipilih dari tabel Menu Items Details
+
+### 📊 Laporan Penjualan
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/e319db80-002b-4be5-9694-e16e860264c9" />
 
-Berisi data-data ID, Nama Pelanggan, Tanggal, Total, dan Kasir
+Berisi data lengkap transaksi:
+  - ID: Nomor identifikasi transaksi
+  - Nama Pelanggan: Identitas customer
+  - Tanggal: Waktu transaksi dilakukan
+  - Total: Jumlah pembayaran
+  - Kasir: Admin yang melayani
+  - 
 
-###  Database
-1. Penyimpanan data produk dan transaksi secara permanen menggunakan **SQLite**.
-2. Otomatis membuat tabel 'admin' 'menu' 'order' dan 'orderitem' saat aplikasi pertama kali dijalankan jika belum ada menggunakan file .db.
+### 🗄️ Database
+Penyimpanan Permanen: Menggunakan SQLite untuk menyimpan data produk dan transaksi secara permanen
+Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama kali dijalankan jika belum ada:
+
+  - admin - Data pengguna/administrator
+  - menu - Data menu makanan dan minuman
+  - order - Data transaksi/pesanan
+  - orderitem - Detail item dalam setiap pesanan
+
+    
+---
+
+### Struktur Folder
+📁 temurasa/                         // Main package - Paket utama aplikasi POS
+├── 📁 abstracts/                    
+│   └── 📄 ShowScene.java           // Kelas abstrak untuk manajemen tampilan/scene UI
+├── 📁 database/                    // Data Access Layer - Layer akses data
+│   ├── 📄 AdminDao.java            // Data Access Object untuk manajemen admin/user
+│   ├── 📄 DatabaseHelper.java      // Helper untuk koneksi dan operasi database SQLite
+│   ├── 📄 MenuDAO.java             // Data Access Object untuk operasi CRUD menu makanan
+│   ├── 📄 OrderDAO.java            // Data Access Object untuk operasi CRUD pesanan
+│   └── 📄 OrderItemsDao.java       // Data Access Object untuk item-item dalam pesanan
+├── 📁 GUI/                         // Graphical User Interface - Antarmuka pengguna
+│   ├── 📄 LoginWindow.java         // Jendela login untuk autentikasi pengguna
+│   ├── 📄 MainWindow.java          // Jendela utama aplikasi dengan menu navigasi
+│   ├── 📄 MenuManagement.java      // Panel untuk mengelola menu (tambah/edit/hapus item)
+│   ├── 📄 PosPanel.java            // Panel kasir untuk input pesanan dan transaksi
+│   └── 📄 SalesReportPanel.java    // Panel laporan penjualan dan statistik
+├── 📁 models/                      // Data Models - Model data/entitas
+│   ├── 📄 BaseModel.java           // Kelas dasar untuk semua model (ID, timestamps)
+│   ├── 📄 Menu.java                // Model untuk item menu (nama, harga, kategori)
+│   ├── 📄 Order.java               // Model untuk pesanan (tanggal, total, status)
+│   ├── 📄 OrderItem.java           // Model untuk item dalam pesanan
+│   └── 📄 User.java                // Model untuk pengguna/admin sistem
+├── 📁 util/                        // Utility Classes - Kelas utilitas
+│   └── 📄 PasswordUtils.java       // Utility untuk hashing dan verifikasi password
+├── 📄 Main.java                    // Application entry point - Titik masuk aplikasi
+└── 🗄️ temurasa.db                  // SQLite database file - File database SQLite
+
+---
+
+ ### Struktur Kode dan Penerapan OOP
+
+
+
+
+
+
+
+
+---
+
+### Implementasi OOP
+
+
+### Penjelasan 4 Pilar OOP
+
+### Pembagian Tugas Peranggota
+
+
+
+
+
 
 
 
