@@ -87,6 +87,7 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 ---
 
 ### Struktur Folder
+```plaintext
 📁 temurasa/                         // Main package - Paket utama aplikasi POS
 ├── 📁 abstracts/                    
 │   └── 📄 ShowScene.java           // Kelas abstrak untuk manajemen tampilan/scene UI
