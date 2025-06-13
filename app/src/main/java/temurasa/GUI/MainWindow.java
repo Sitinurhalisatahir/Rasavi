@@ -22,7 +22,7 @@ public class MainWindow {
 
     private PosPanel posPanel;
     private MenuManagementPanel menuPanel;
-    private SalesReport salesPanel;
+    private SalesReportPanel salesPanel;
 
     public MainWindow(String username) {
         this.username = username;
