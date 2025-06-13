@@ -142,7 +142,7 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 | *(root)*           | `Main.java`                     | Titik masuk aplikasi (entry point)                                       |
 | *(root)*           | `temurasa.db`                   | File database SQLite                                                     |
 
-
+---
 
 ### 🧠 Implementasi OOP
 - Penerapan Pilar OOP
@@ -151,39 +151,16 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 - abstraction: show scene sebagai kelas interface
 - polymorphism: method createUI() yang dioverride oleh LoginWindow dan MainWindow
 
+---
 
 ### 📌 Pembagian Tugas
 
-#### 🔹 Controller
-- `MenuController`: Siti  
-- `OrderController`: Shabrina  
-- `UserController`: Gatri  
+| Nama      | Bagian Tugas                                                                 |
+|-----------|-------------------------------------------------------------------------------|
+| **Siti**  | `MenuController`, `MenuManagementPanel`, `SalesReportPanel`, `Menu`, `MenuDAO`, `Main` |
+| **Shabrina** | `OrderController`, `LoginWindow`, `MainWindow`, `Order`, `OrderItem`, `OrderDAO`, `OrderItemsDAO` |
+| **Gatri** | `UserController`, `PosPanel`, `AdminDAO`, `DatabaseHelper`, `User`, `PasswordUtils` |
 
-#### 🔹 GUI
-- `LoginWindow`: Shabrina  
-- `MainWindow`: Shabrina  
-- `MenuManagementPanel`: Siti  
-- `PosPanel`: Gatri  
-- `SalesReportPanel`: Siti  
-
-#### 🔹 Database
-- `AdminDAO`: Gatri  
-- `DatabaseHelper`: Gatri  
-- `MenuDAO`: Siti  
-- `OrderDAO`: Shabrina  
-- `OrderItemsDAO`: Shabrina  
-
-#### 🔹 Models
-- `Menu`: Siti  
-- `Order`: Shabrina  
-- `OrderItem`: Shabrina  
-- `User`: Gatri  
-
-#### 🔹 Utils
-- `PasswordUtils`: Gatri  
-
-#### 🔹 Main
-- `Main`: Siti
-
+---
 
 
