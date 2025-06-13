@@ -163,23 +163,26 @@ public class MenuManagementPanel extends VBox {
         buttonBox.setAlignment(Pos.CENTER);
 
         addButton = new Button("Tambah");
+        buttonBox.setAlignment(Pos.CENTER);
+
+        addButton = new Button("Tambah");
         addButton.setStyle(
-                "-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;");
+                "-fx-background-color: #D4B996; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 8 16;");
         addButton.setOnAction(e -> addMenuItem());
 
         updateButton = new Button("Update");
         updateButton.setStyle(
-                "-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;");
+                "-fx-background-color: #D4B996; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 8 16;");
         updateButton.setOnAction(e -> updateMenuItem());
 
         deleteButton = new Button("Hapus");
         deleteButton.setStyle(
-                "-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;");
+                "-fx-background-color: #D4B996; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 8 16;");
         deleteButton.setOnAction(e -> deleteMenuItem());
 
         clearFieldsButton = new Button("Clear");
         clearFieldsButton.setStyle(
-                "-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;");
+                "-fx-background-color: #D4B996; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 8 16;");
         clearFieldsButton.setOnAction(e -> clearFields());
 
         buttonBox.getChildren().addAll(addButton, updateButton, deleteButton, clearFieldsButton);

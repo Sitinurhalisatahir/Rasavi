@@ -8,8 +8,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import temurasa.abstracts.ShowScene;
 
-public class MainWindow {
+public class MainWindow implements ShowScene {
     private String username;
     private Stage stage;
     private BorderPane mainLayout;
@@ -29,7 +30,8 @@ public class MainWindow {
         createUI();
     }
 
-    private void createUI() {
+    @Override
+    public void createUI() {
         stage = new Stage();
         stage.setTitle("Welcome to Temurasa POS");
         mainLayout = new BorderPane();
@@ -198,6 +200,7 @@ public class MainWindow {
     }
 
     private void showSalesPanel() {
+        salesPanel.refreshData();
         mainLayout.setCenter(salesPanel.getPanel());
     }
 

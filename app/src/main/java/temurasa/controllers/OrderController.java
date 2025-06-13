@@ -2,12 +2,12 @@ package temurasa.controllers;
 
 import java.util.List;
 
-import temurasa.database.OrderDao;
+import temurasa.database.OrderDAO;
 import temurasa.models.Order;
 import temurasa.models.OrderItem;
 
 public class OrderController implements IBaseController<Order> {
-    private final OrderDao orderDao = new OrderDao();
+    private final OrderDAO orderDao = new OrderDAO();
 
     @Override
     public boolean tambah(Order order) {

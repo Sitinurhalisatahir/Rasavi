@@ -11,9 +11,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import temurasa.models.Order;
-import temurasa.database.OrderDao;
+import temurasa.controllers.OrderController;
 
 import java.text.NumberFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
 
@@ -21,6 +22,7 @@ public class SalesReportPanel {
 
     private VBox mainPanel;
     private TableView<Order> tableView;
+    private OrderController orderController = new OrderController();
 
     public SalesReportPanel() {
         mainPanel = new VBox(15);
@@ -37,25 +39,31 @@ public class SalesReportPanel {
 
         mainPanel.getChildren().addAll(titleLabel, scrollPane);
 
-        loadData();
+        // loadData();
+        refreshData();
     }
 
     private void setupTable() {
         TableColumn<Order, Integer> colId = new TableColumn<>("ID");
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colId.setMinWidth(80);
+        colId.setMinWidth(60);
 
-        TableColumn<Order, String> colNamaPelanggan = new TableColumn<>("Nama Pelanggan");
-        colNamaPelanggan.setCellValueFactory(new PropertyValueFactory<>("namaPelanggan"));
-        colNamaPelanggan.setMinWidth(180);
+        TableColumn<Order, String> colNamaPembeli = new TableColumn<>("Nama Pembeli");
+        colNamaPembeli.setCellValueFactory(new PropertyValueFactory<>("namaPembeli"));
+        colNamaPembeli.setMinWidth(150);
+
+        TableColumn<Order, String> colKasir = new TableColumn<>("Kasir");
+        colKasir.setCellValueFactory(new PropertyValueFactory<>("kasir"));
+        colKasir.setMinWidth(100);
 
         TableColumn<Order, String> colTanggal = new TableColumn<>("Tanggal");
-        colTanggal.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleStringProperty(
-                        cellData.getValue().getTanggal().toString()
-                )
-        );
-        colTanggal.setMinWidth(180);
+        colTanggal.setCellValueFactory(cellData -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            return new javafx.beans.property.SimpleStringProperty(
+                cellData.getValue().getTanggal().format(formatter)
+            );
+        });
+        colTanggal.setMinWidth(160);
 
         TableColumn<Order, Double> colTotal = new TableColumn<>("Total");
         colTotal.setCellValueFactory(new PropertyValueFactory<>("total_pembelian"));
@@ -73,17 +81,19 @@ public class SalesReportPanel {
             }
         });
 
-        TableColumn<Order, String> colKasir = new TableColumn<>("Kasir");
-        colKasir.setCellValueFactory(new PropertyValueFactory<>("kasir"));
-        colKasir.setMinWidth(120);
-
-        tableView.getColumns().addAll(colId, colNamaPelanggan, colTanggal, colTotal, colKasir);
+        tableView.getColumns().setAll(colId, colNamaPembeli, colTanggal, colKasir, colTotal);
     }
 
     private void loadData() {
-        List<Order> orders = new OrderDao().getAllOrders();
+        List<Order> orders = orderController.getAll();
         ObservableList<Order> data = FXCollections.observableArrayList(orders);
         tableView.setItems(data);
+    }
+
+    public void refreshData() {
+        loadData();
+        System.out.println("tes`1");
+        tableView.refresh();
     }
 
     public VBox getPanel() {

@@ -15,7 +15,7 @@ import temurasa.models.Order;
 import temurasa.models.OrderItem;
 import temurasa.controllers.MenuController;
 import temurasa.controllers.OrderController;
-import temurasa.database.MenuDao;
+import temurasa.database.MenuDAO;
 
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
@@ -426,7 +426,7 @@ public class PosPanel extends VBox {
                 if (orderId > 0) {
                     boolean success = orderController.tambahItemKeOrder(orderId, orderItems);
                     if (success) {
-                        MenuDao menuDao = new MenuDao();
+                        MenuDAO menuDao = new MenuDAO();
                         for (OrderItem item : orderItems) {
                             menuDao.kurangiStok(item.getNamaItem(), item.getQuantity());
                         }
