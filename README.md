@@ -73,7 +73,7 @@ Berisi data lengkap transaksi:
   - Tanggal: Waktu transaksi dilakukan
   - Total: Jumlah pembayaran
   - Kasir: Admin yang melayani
-  - 
+    
 
 ### 🗄️ Database
 Penyimpanan Permanen: Menggunakan SQLite untuk menyimpan data produk dan transaksi secara permanen
