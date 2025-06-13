@@ -6,10 +6,10 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
 ---
 
 ### 👥Anggota Kelompok
-**Marche Gatriani Sude (H071241054)**
-**Shabrina Zahra Ramadhani (H071241045)**
-**Siti Nur Halisa tahir (H071241086)**
 
+- **Marche Gatriani Sude (H071241054)**
+- **Shabrina Zahra Ramadhani (H071241045)**
+- **Siti Nur Halisa Tahir (H071241086)**
 
 ---
 
