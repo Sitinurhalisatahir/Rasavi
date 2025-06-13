@@ -1,7 +1,6 @@
 package temurasa.database;
 
 import java.sql.*;
-import temurasa.util.PasswordUtils;
 
 public class AdminDao {
 
