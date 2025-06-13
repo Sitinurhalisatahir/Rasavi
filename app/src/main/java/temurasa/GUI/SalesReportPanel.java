@@ -50,11 +50,11 @@ public class SalesReportPanel {
 
         TableColumn<Order, String> colNamaPembeli = new TableColumn<>("Nama Pembeli");
         colNamaPembeli.setCellValueFactory(new PropertyValueFactory<>("namaPembeli"));
-        colNamaPembeli.setMinWidth(150);
+        colNamaPembeli.setMinWidth(250);
 
         TableColumn<Order, String> colKasir = new TableColumn<>("Kasir");
         colKasir.setCellValueFactory(new PropertyValueFactory<>("kasir"));
-        colKasir.setMinWidth(100);
+        colKasir.setMinWidth(250);
 
         TableColumn<Order, String> colTanggal = new TableColumn<>("Tanggal");
         colTanggal.setCellValueFactory(cellData -> {
@@ -63,11 +63,11 @@ public class SalesReportPanel {
                 cellData.getValue().getTanggal().format(formatter)
             );
         });
-        colTanggal.setMinWidth(160);
+        colTanggal.setMinWidth(250);
 
         TableColumn<Order, Double> colTotal = new TableColumn<>("Total");
         colTotal.setCellValueFactory(new PropertyValueFactory<>("total_pembelian"));
-        colTotal.setMinWidth(120);
+        colTotal.setMinWidth(250);
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         colTotal.setCellFactory(col -> new javafx.scene.control.TableCell<Order, Double>() {
             @Override
