@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuDao {
+public class MenuDAO {
     public boolean insertMenu(Menu menu) {
         if (isNamaMenuExist(menu.getNama())) {
             System.err.println("Nama menu sudah ada!");

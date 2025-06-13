@@ -1,11 +1,11 @@
 package temurasa.controllers;
 
 import temurasa.models.Menu;
-import temurasa.database.MenuDao;
+import temurasa.database.MenuDAO;
 import java.util.List;
 
 public class MenuController implements IBaseController<Menu> {
-    private final MenuDao menuDao = new MenuDao();
+    private final MenuDAO menuDao = new MenuDAO();
 
     @Override
     public boolean tambah(Menu menu) {

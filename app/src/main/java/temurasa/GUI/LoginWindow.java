@@ -11,8 +11,9 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import temurasa.controllers.UserController;
 import temurasa.models.User;
+import temurasa.abstracts.ShowScene;
 
-public class LoginWindow {
+public class LoginWindow implements ShowScene {
     private Stage stage;
     private TextField usernameField;
     private PasswordField passwordField;
@@ -25,7 +26,8 @@ public class LoginWindow {
         createUI();
     }
 
-    private void createUI() {
+    @Override
+    public void createUI() {
         stage = new Stage();
         stage.setTitle("TemuRasa - Login System");
 
