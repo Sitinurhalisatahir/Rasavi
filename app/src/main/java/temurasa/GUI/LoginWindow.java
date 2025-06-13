@@ -169,6 +169,11 @@ public class LoginWindow implements ShowScene {
             return;
         }
 
+        if (password.length() < 7) {
+            showMessage("Password must be at least 7 characters long!", Color.web("#C62828"));
+            return;
+        }
+
         String hashedPassword = PasswordUtils.hashPassword(password);
 
         if (isLoginMode) {
