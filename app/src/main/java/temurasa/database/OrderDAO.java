@@ -36,28 +36,6 @@ public class OrderDAO {
         return -1;
     }
 
-    // Alternatif: Method overloaded untuk insert dengan tanggal spesifik
-    public int insertOrderWithSpecificDate(Order order, LocalDateTime specificDate) {
-        String sql = "INSERT INTO orders (nama_pembeli, kasir, tanggal, total_harga) VALUES (?, ?, ?, ?)";
-
-        try (Connection conn = DatabaseHelper.getConnection();
-                PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.setString(1, order.getNamaPembeli());
-            pstmt.setString(2, order.getKasir());
-            pstmt.setString(3, specificDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-            pstmt.setDouble(4, order.getTotal_pembelian());
-            pstmt.executeUpdate();
-
-            ResultSet rs = pstmt.getGeneratedKeys();
-            if (rs.next()) {
-                return rs.getInt(1);
-            }
-        } catch (SQLException e) {
-            System.err.println("Gagal menambah order: " + e.getMessage());
-        }
-        return -1;
-    }
-
     public boolean insertOrderItems(int orderId, List<OrderItem> items) {
         String sql = "INSERT INTO order_items (order_id, nama_item, quantity, harga_per_unit) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseHelper.getConnection();

@@ -73,15 +73,15 @@ public class MenuManagementPanel extends VBox {
 
         TableColumn<Menu, String> nameCol = new TableColumn<>("Nama");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("nama"));
-        nameCol.setPrefWidth(180);
+        nameCol.setPrefWidth(200);
 
         TableColumn<Menu, String> categoryCol = new TableColumn<>("Kategori");
         categoryCol.setCellValueFactory(new PropertyValueFactory<>("kategori"));
-        categoryCol.setPrefWidth(120);
+        categoryCol.setPrefWidth(150);
 
         TableColumn<Menu, Double> priceCol = new TableColumn<>("Harga");
         priceCol.setCellValueFactory(new PropertyValueFactory<>("harga"));
-        priceCol.setPrefWidth(100);
+        priceCol.setPrefWidth(150);
         priceCol.setCellFactory(col -> new TableCell<Menu, Double>() {
             @Override
             protected void updateItem(Double price, boolean empty) {
@@ -96,7 +96,7 @@ public class MenuManagementPanel extends VBox {
 
         TableColumn<Menu, Integer> stockCol = new TableColumn<>("Stok");
         stockCol.setCellValueFactory(new PropertyValueFactory<>("stok"));
-        stockCol.setPrefWidth(80);
+        stockCol.setPrefWidth(100);
 
         menuTable.getColumns().addAll(nameCol, categoryCol, priceCol, stockCol);
 
@@ -221,7 +221,8 @@ public class MenuManagementPanel extends VBox {
     }
 
     private void addMenuItem() {
-        if (!validateFields()) return;
+        if (!validateFields())
+            return;
 
         try {
             String name = nameField.getText().trim();
@@ -249,7 +250,8 @@ public class MenuManagementPanel extends VBox {
             showAlert("Pilih item yang ingin diupdate.");
             return;
         }
-        if (!validateFields()) return;
+        if (!validateFields())
+            return;
 
         try {
             String name = nameField.getText().trim();
@@ -258,8 +260,9 @@ public class MenuManagementPanel extends VBox {
             int stock = Integer.parseInt(stockField.getText());
 
             // Buat objek Menu baru dengan ID dari selectedMenuItem
-            Menu menuBaru = new Menu(selectedMenuItem.getId(), name, price, category, stock, selectedMenuItem.getCreatedAt());
-            
+            Menu menuBaru = new Menu(selectedMenuItem.getId(), name, price, category, stock,
+                    selectedMenuItem.getCreatedAt());
+
             // Panggil updateMenu dengan hanya satu parameter (objek Menu)
             boolean success = menuDao.updateMenu(menuBaru);
 
