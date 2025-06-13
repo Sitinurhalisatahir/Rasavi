@@ -29,7 +29,7 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
    
 
   ### 💰 Point of Sale (Kasir)
-!   [image](https://github.com/user-attachments/assets/1a22fb89-4f02-49d7-8881-fc626cf71a85)
+  <img width="317" alt="image" src="https://github.com/user-attachments/assets/64679a79-3c96-49ff-b056-d0c3fc703506" />
 
   1. Input nama customer - Memasukkan identitas pelanggan
   2. Menu Items - Katalog berisi nama dan kategori makanan/minuman
@@ -116,7 +116,6 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 └── 🗄️ temurasa.db                  // SQLite database file - File database SQLite
 
 
-
 ---
 
 ### Struktur Kode dan Penerapan OOP
@@ -134,7 +133,52 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 
 ### Penjelasan 4 Pilar OOP
 
-### Pembagian Tugas Peranggota
+### 📌 Pembagian Tugas
+🔹 Controller
+MenuController: Siti
+
+OrderController: Shabrina
+
+UserController: Gatri
+
+🔹 GUI
+LoginWindow: Shabrina
+
+MainWindow: Shabrina
+
+MenuManagementPanel: Siti
+
+PosPanel: Gatri
+
+SalesReportPanel: Siti
+
+🔹 Database
+AdminDAO: Gatri
+
+DatabaseHelper: Gatri
+
+MenuDAO: Siti
+
+OrderDAO: Shabrina
+
+OrderItemsDAO: Shabrina
+
+🔹 Models
+Menu: Siti
+
+Order: Shabrina
+
+OrderItem: Shabrina
+
+User: Gatri
+
+🔹 Utils
+PasswordUtils: Gatri
+
+🔹 Main
+Main: Siti
+
+
 
 
 
