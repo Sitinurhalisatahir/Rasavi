@@ -17,7 +17,7 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
    <img width="384" alt="image" src="https://github.com/user-attachments/assets/bfb0da3c-23ab-43be-970d-3b3400888bfd" />
 
   ## Point Of Sale
-  <img width="959" alt="image" src="https://github.com/user-attachments/assets/27edb7fa-fc52-4861-9661-f3287a8e6626" />
+  <img width="957" alt="image" src="https://github.com/user-attachments/assets/9fde6c95-db23-4079-8b0a-be29304a3c16" />
 
 
   1. Input nama customer
@@ -30,7 +30,8 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
 
 
 ### Manajemen Menu
-<img width="670" alt="image" src="https://github.com/user-attachments/assets/31cb12fd-cbd5-4e73-bd4e-36b8aaad610e" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/558c096f-e74e-4450-84e7-e24ae202a3f5" />
+
 
 1. Menu Items berisi nama, kategori, harga, dan stok
 2. Tabel Menu Items Details yang berisi Nama, Kategori (Makanan dan Minuman), Harga dan Stok
