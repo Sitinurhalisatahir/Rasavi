@@ -126,8 +126,7 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 | `database`         | `AdminDao.java`                 | DAO untuk data admin/pengguna                                            |
 |                    | `DatabaseHelper.java`           | Koneksi & utilitas database SQLite                                       |
 |                    | `MenuDAO.java`                  | DAO untuk operasi CRUD menu makanan                                      |
-|                    | `OrderDAO.java`                 | DAO untuk operasi CRUD pesanan                                           |
-|                    | `OrderItemsDao.java`            | DAO untuk item dalam pesanan                                             |
+|                    | `OrderDAO.java`                 | DAO untuk operasi CRUD pesanan                                           |                        
 | `GUI`              | `LoginWindow.java`              | Jendela login untuk autentikasi pengguna                                 |
 |                    | `MainWindow.java`               | Jendela utama aplikasi dengan navigasi                                   |
 |                    | `MenuManagement.java`           | Panel untuk mengelola menu (tambah/edit/hapus item)                      |
