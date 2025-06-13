@@ -65,8 +65,7 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
     - 🗑️ Hapus: Menghapus item yang dipilih dari tabel Menu Items Details
 
 ### 📊 Laporan Penjualan
-![image](https://github.com/user-attachments/assets/dddf41ab-ac0a-4a27-9329-9d56a9c8e5d6)
-
+<img width="529" alt="image" src="https://github.com/user-attachments/assets/0ae8fcbf-3a25-48eb-8091-d064aabff4cd" />
 
 Berisi data lengkap transaksi:
   - ID: Nomor identifikasi transaksi
