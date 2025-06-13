@@ -118,77 +118,42 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 
 ---
 
+### 🧱 Struktur Proyek & Kode
+
 ### Struktur Kode dan Penerapan OOP
 
-
-
-
-
-
-
----
-
 ### Implementasi OOP
-
 
 ### Penjelasan 4 Pilar OOP
 
 ### 📌 Pembagian Tugas
-🔹 Controller
-MenuController: Siti
+- 🔹 **Controller**  
+  - `MenuController`: Siti  
+  - `OrderController`: Shabrina  
+  - `UserController`: Gatri  
 
-OrderController: Shabrina
+- 🔹 **GUI**  
+  - `LoginWindow`: Shabrina  
+  - `MainWindow`: Shabrina  
+  - `MenuManagementPanel`: Siti  
+  - `PosPanel`: Gatri  
+  - `SalesReportPanel`: Siti  
 
-UserController: Gatri
+- 🔹 **Database**  
+  - `AdminDAO`: Gatri  
+  - `DatabaseHelper`: Gatri  
+  - `MenuDAO`: Siti  
+  - `OrderDAO`: Shabrina  
+  - `OrderItemsDAO`: Shabrina  
 
-🔹 GUI
-LoginWindow: Shabrina
+- 🔹 **Models**  
+  - `Menu`: Siti  
+  - `Order`: Shabrina  
+  - `OrderItem`: Shabrina  
+  - `User`: Gatri  
 
-MainWindow: Shabrina
+- 🔹 **Utils**  
+  - `PasswordUtils`: Gatri  
 
-MenuManagementPanel: Siti
-
-PosPanel: Gatri
-
-SalesReportPanel: Siti
-
-🔹 Database
-AdminDAO: Gatri
-
-DatabaseHelper: Gatri
-
-MenuDAO: Siti
-
-OrderDAO: Shabrina
-
-OrderItemsDAO: Shabrina
-
-🔹 Models
-Menu: Siti
-
-Order: Shabrina
-
-OrderItem: Shabrina
-
-User: Gatri
-
-🔹 Utils
-PasswordUtils: Gatri
-
-🔹 Main
-Main: Siti
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  -
+- 🔹 **Main**  
+  - `Main`: Siti
