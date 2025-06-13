@@ -97,7 +97,7 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 │   ├── 📄 DatabaseHelper.java      // Helper untuk koneksi dan operasi database SQLite
 │   ├── 📄 MenuDAO.java             // Data Access Object untuk operasi CRUD menu makanan
 │   ├── 📄 OrderDAO.java            // Data Access Object untuk operasi CRUD pesanan
-│   └── 📄 OrderItemsDao.java       // Data Access Object untuk item-item dalam pesanan
+│         
 ├── 📁 GUI/                         // Graphical User Interface - Antarmuka pengguna
 │   ├── 📄 LoginWindow.java         // Jendela login untuk autentikasi pengguna
 │   ├── 📄 MainWindow.java          // Jendela utama aplikasi dengan menu navigasi
@@ -158,7 +158,7 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 | Nama      | Bagian Tugas                                                                 |
 |-----------|-------------------------------------------------------------------------------|
 | **Siti**  | `MenuController`, `MenuManagementPanel`, `SalesReportPanel`, `Menu`, `MenuDAO`, `Main` |
-| **Shabrina** | `OrderController`, `LoginWindow`, `MainWindow`, `Order`, `OrderItem`, `OrderDAO`, `OrderItemsDAO` |
+| **Shabrina** | `OrderController`, `LoginWindow`, `MainWindow`, `Order`, `OrderItem`, `OrderDAO`,  |
 | **Gatri** | `UserController`, `PosPanel`, `AdminDAO`, `DatabaseHelper`, `User`, `PasswordUtils` |
 
 ---
