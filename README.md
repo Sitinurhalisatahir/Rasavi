@@ -114,16 +114,43 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 │   └── 📄 PasswordUtils.java       // Utility untuk hashing dan verifikasi password
 ├── 📄 Main.java                    // Application entry point - Titik masuk aplikasi
 └── 🗄️ temurasa.db                  // SQLite database file - File database SQLite
+```
 
 ---
 
-### 🧱 Struktur Proyek & Kode
+### 🧱 Struktur Paket & Kelas
 
-### 🔧 Struktur Kode dan Penerapan OOP
+| Paket              | Kelas                            | Deskripsi                                                                 |
+|--------------------|----------------------------------|---------------------------------------------------------------------------|
+| `abstracts`        | `ShowScene.java`                | Kelas abstrak untuk manajemen tampilan/scene                             |
+| `database`         | `AdminDao.java`                 | DAO untuk data admin/pengguna                                            |
+|                    | `DatabaseHelper.java`           | Koneksi & utilitas database SQLite                                       |
+|                    | `MenuDAO.java`                  | DAO untuk operasi CRUD menu makanan                                      |
+|                    | `OrderDAO.java`                 | DAO untuk operasi CRUD pesanan                                           |
+|                    | `OrderItemsDao.java`            | DAO untuk item dalam pesanan                                             |
+| `GUI`              | `LoginWindow.java`              | Jendela login untuk autentikasi pengguna                                 |
+|                    | `MainWindow.java`               | Jendela utama aplikasi dengan navigasi                                   |
+|                    | `MenuManagement.java`           | Panel untuk mengelola menu (tambah/edit/hapus item)                      |
+|                    | `PosPanel.java`                 | Panel kasir untuk input pesanan dan transaksi                            |
+|                    | `SalesReportPanel.java`         | Panel laporan penjualan dan statistik                                    |
+| `models`           | `BaseModel.java`                | Kelas dasar untuk semua model (ID, timestamps)                           |
+|                    | `Menu.java`                     | Model untuk item menu (nama, harga, kategori)                            |
+|                    | `Order.java`                    | Model untuk pesanan (tanggal, total, status)                             |
+|                    | `OrderItem.java`                | Model untuk item dalam pesanan                                           |
+|                    | `User.java`                     | Model untuk pengguna/admin sistem                                        |
+| `util`             | `PasswordUtils.java`            | Utility untuk hashing dan verifikasi password                            |
+| *(root)*           | `Main.java`                     | Titik masuk aplikasi (entry point)                                       |
+| *(root)*           | `temurasa.db`                   | File database SQLite                                                     |
+
+
 
 ### 🧠 Implementasi OOP
+- Penerapan Pilar OOP
+- encapsulation: modifier, dan fields yang bersifat private dan modifier protected, akses melalui setter dan getter
+- inheritance: menu dan order mewarisi atribut id dari basemodel
+- abstraction: show scene sebagai kelas interface
+- polymorphism: method createUI() yang dioverride oleh LoginWindow dan MainWindow
 
-### 💡 Penjelasan 4 Pilar OOP
 
 ### 📌 Pembagian Tugas
 
