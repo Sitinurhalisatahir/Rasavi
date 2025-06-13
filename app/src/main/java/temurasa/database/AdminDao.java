@@ -1,4 +1,5 @@
 package temurasa.database;
-public class ReservationDAO {
+
+public class AdminDao {
     
 }

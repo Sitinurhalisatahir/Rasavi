@@ -17,19 +17,16 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
+    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
 
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-    // This dependency is used by the application.
-    implementation libs.guava
+    implementation "org.openjfx:javafx-controls:24"
+    implementation "org.openjfx:javafx-fxml:24" // sesuaikan dengan versi JavaFX yang digunakan
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(23) // sesuaikan dengan versi Java yang digunakan
     }
 }
 
@@ -39,7 +36,7 @@ application {
 }
 
 javafx {
-    version = "21"
+    version = "24" // sesuaikan dengan versi JavaFX yang digunakan
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
