@@ -4,7 +4,6 @@ Temurasa adalah sistem manajemen restoran yang memungkinkan admin untuk mengelol
 
 ---
 # Fitur Utama
----
 👨‍💼 Panel Admin & Pemesanan
 
 1. Pemesanan dengan Input Nama Customer: Admin dapat membuat pesanan dengan menginput nama pelanggan secara manual
