@@ -17,16 +17,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
+    implementation 'org.xerial:sqlite-jdbc:3.49.1.0'
 
-    implementation "org.openjfx:javafx-controls:24"
-    implementation "org.openjfx:javafx-fxml:24" // sesuaikan dengan versi JavaFX yang digunakan
+    implementation "org.openjfx:javafx-controls:21"
+    implementation "org.openjfx:javafx-fxml:21" // sesuaikan dengan versi JavaFX yang digunakan
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(23) // sesuaikan dengan versi Java yang digunakan
+        languageVersion = JavaLanguageVersion.of(21) // sesuaikan dengan versi Java yang digunakan
     }
 }
 
@@ -36,11 +36,7 @@ application {
 }
 
 javafx {
-    version = "24" // sesuaikan dengan versi JavaFX yang digunakan
+    version = "21" // sesuaikan dengan versi JavaFX yang digunakan
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
