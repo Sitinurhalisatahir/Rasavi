@@ -1,5 +1,6 @@
 package temurasa.models;
 
+<<<<<<< HEAD
 import temurasa.models.payment.Payable;
 import java.util.ArrayList;
 import java.util.List;
@@ -132,4 +133,8 @@ public class Order {
         return String.format("Order[%s] - Customer: %s, Total: Rp%.2f, Status: %s, Payment: %s",
                 orderId, customerId, total, status, paymentStatus);
     }
+=======
+public class Order {
+    
+>>>>>>> 2f27675dbbd93fbe7764e68286aeaccec903c447
 }
