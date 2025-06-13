@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import temurasa.models.Menu;
-import temurasa.controllers.MenuController;
+import temurasa.database.MenuDAO;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -32,7 +32,7 @@ public class MenuManagementPanel extends VBox {
     private NumberFormat currencyFormat;
     private Menu selectedMenuItem;
 
-    private final MenuController menuController = new MenuController();
+    private MenuDAO menuDao = new MenuDAO();
 
     public MenuManagementPanel() {
         this.currencyFormat = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
@@ -193,7 +193,7 @@ public class MenuManagementPanel extends VBox {
 
     private void loadMenuItems() {
         try {
-            List<Menu> items = menuController.getAll();
+            List<Menu> items = menuDao.getAllMenu();
             menuItems.clear();
             menuItems.addAll(items);
             if (menuTable != null) {
@@ -230,7 +230,7 @@ public class MenuManagementPanel extends VBox {
             int stock = Integer.parseInt(stockField.getText());
 
             Menu menu = new Menu(0, name, price, category, stock, null);
-            boolean success = menuController.tambah(menu);
+            boolean success = menuDao.insertMenu(menu);
 
             if (success) {
                 showAlert("Menu berhasil ditambahkan!", Alert.AlertType.INFORMATION);
@@ -257,8 +257,11 @@ public class MenuManagementPanel extends VBox {
             double price = Double.parseDouble(priceField.getText());
             int stock = Integer.parseInt(stockField.getText());
 
+            // Buat objek Menu baru dengan ID dari selectedMenuItem
             Menu menuBaru = new Menu(selectedMenuItem.getId(), name, price, category, stock, selectedMenuItem.getCreatedAt());
-            boolean success = menuController.updateMenu(selectedMenuItem.getId(), menuBaru);
+            
+            // Panggil updateMenu dengan hanya satu parameter (objek Menu)
+            boolean success = menuDao.updateMenu(menuBaru);
 
             if (success) {
                 showAlert("Menu berhasil diupdate!", Alert.AlertType.INFORMATION);
@@ -285,7 +288,7 @@ public class MenuManagementPanel extends VBox {
 
         confirmation.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
-                boolean success = menuController.hapusMenu(selectedMenuItem.getId());
+                boolean success = menuDao.deleteMenu(selectedMenuItem.getId());
                 if (success) {
                     showAlert("Menu berhasil dihapus!", Alert.AlertType.INFORMATION);
                     refreshData();

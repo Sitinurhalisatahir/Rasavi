@@ -10,8 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import temurasa.database.OrderDAO;
 import temurasa.models.Order;
-import temurasa.controllers.OrderController;
 
 import java.text.NumberFormat;
 import java.time.format.DateTimeFormatter;
@@ -22,7 +22,7 @@ public class SalesReportPanel {
 
     private VBox mainPanel;
     private TableView<Order> tableView;
-    private OrderController orderController = new OrderController();
+    private OrderDAO orderDao = new OrderDAO();
 
     public SalesReportPanel() {
         mainPanel = new VBox(15);
@@ -85,7 +85,7 @@ public class SalesReportPanel {
     }
 
     private void loadData() {
-        List<Order> orders = orderController.getAll();
+        List<Order> orders = orderDao.getAllOrders();
         ObservableList<Order> data = FXCollections.observableArrayList(orders);
         tableView.setItems(data);
     }

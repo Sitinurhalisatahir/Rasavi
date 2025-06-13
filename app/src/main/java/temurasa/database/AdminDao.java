@@ -9,7 +9,7 @@ public class AdminDao {
     public boolean isAdminExist(String username) {
         String sql = "SELECT 1 FROM admin WHERE username = ?";
         try (Connection conn = DatabaseHelper.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
             ResultSet rs = pstmt.executeQuery();
             return rs.next();
@@ -21,12 +21,12 @@ public class AdminDao {
 
     // Register admin baru
     public boolean insertAdmin(String username, String password) {
-        String hashedPassword = PasswordUtils.hashPassword(password);
+        // Jangan hash di sini, hash di luar saja!
         String sql = "INSERT INTO admin(username, password) VALUES(?, ?)";
         try (Connection conn = DatabaseHelper.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
-            pstmt.setString(2, hashedPassword);
+            pstmt.setString(2, password);
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -37,12 +37,12 @@ public class AdminDao {
 
     // Login admin
     public boolean authenticate(String username, String password) {
-        String hashedPassword = PasswordUtils.hashPassword(password);
+        // Jangan hash di sini, hash di luar saja!
         String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
         try (Connection conn = DatabaseHelper.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
-            pstmt.setString(2, hashedPassword);
+            pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
             return rs.next();
         } catch (SQLException e) {
