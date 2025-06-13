@@ -88,7 +88,6 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 ---
 
 ### Struktur Folder
-```plaintext
 📁 temurasa/                         // Main package - Paket utama aplikasi POS
 ├── 📁 abstracts/                    
 │   └── 📄 ShowScene.java           // Kelas abstrak untuk manajemen tampilan/scene UI
@@ -115,45 +114,48 @@ Auto-Setup Database: Otomatis membuat tabel-tabel berikut saat aplikasi pertama 
 ├── 📄 Main.java                    // Application entry point - Titik masuk aplikasi
 └── 🗄️ temurasa.db                  // SQLite database file - File database SQLite
 
-
 ---
 
 ### 🧱 Struktur Proyek & Kode
 
-### Struktur Kode dan Penerapan OOP
+### 🔧 Struktur Kode dan Penerapan OOP
 
-### Implementasi OOP
+### 🧠 Implementasi OOP
 
-### Penjelasan 4 Pilar OOP
+### 💡 Penjelasan 4 Pilar OOP
 
 ### 📌 Pembagian Tugas
-- 🔹 **Controller**  
-  - `MenuController`: Siti  
-  - `OrderController`: Shabrina  
-  - `UserController`: Gatri  
 
-- 🔹 **GUI**  
-  - `LoginWindow`: Shabrina  
-  - `MainWindow`: Shabrina  
-  - `MenuManagementPanel`: Siti  
-  - `PosPanel`: Gatri  
-  - `SalesReportPanel`: Siti  
+#### 🔹 Controller
+- `MenuController`: Siti  
+- `OrderController`: Shabrina  
+- `UserController`: Gatri  
 
-- 🔹 **Database**  
-  - `AdminDAO`: Gatri  
-  - `DatabaseHelper`: Gatri  
-  - `MenuDAO`: Siti  
-  - `OrderDAO`: Shabrina  
-  - `OrderItemsDAO`: Shabrina  
+#### 🔹 GUI
+- `LoginWindow`: Shabrina  
+- `MainWindow`: Shabrina  
+- `MenuManagementPanel`: Siti  
+- `PosPanel`: Gatri  
+- `SalesReportPanel`: Siti  
 
-- 🔹 **Models**  
-  - `Menu`: Siti  
-  - `Order`: Shabrina  
-  - `OrderItem`: Shabrina  
-  - `User`: Gatri  
+#### 🔹 Database
+- `AdminDAO`: Gatri  
+- `DatabaseHelper`: Gatri  
+- `MenuDAO`: Siti  
+- `OrderDAO`: Shabrina  
+- `OrderItemsDAO`: Shabrina  
 
-- 🔹 **Utils**  
-  - `PasswordUtils`: Gatri  
+#### 🔹 Models
+- `Menu`: Siti  
+- `Order`: Shabrina  
+- `OrderItem`: Shabrina  
+- `User`: Gatri  
 
-- 🔹 **Main**  
-  - `Main`: Siti
+#### 🔹 Utils
+- `PasswordUtils`: Gatri  
+
+#### 🔹 Main
+- `Main`: Siti
+
+
+
