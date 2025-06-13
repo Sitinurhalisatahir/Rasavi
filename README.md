@@ -29,8 +29,8 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
    
 
   ### 💰 Point of Sale (Kasir)
-  <img width="957" alt="image" src="https://github.com/user-attachments/assets/9fde6c95-db23-4079-8b0a-be29304a3c16" />
-  
+!   [image](https://github.com/user-attachments/assets/1a22fb89-4f02-49d7-8881-fc626cf71a85)
+
   1. Input nama customer - Memasukkan identitas pelanggan
   2. Menu Items - Katalog berisi nama dan kategori makanan/minuman
   3. Tabel Orderan Saat Ini - Menampilkan:
@@ -41,10 +41,10 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
         - Total keseluruhan harga
 
   4. Kontrol Pesanan - Tombol manajemen:
-     🗑️ Hapus Item: Menghapus item tertentu yang dipilih
-     ➖ Kurangkan Item: Mengurangi satu item yang dipilih
-     🗑️ Hapus Order: Menghapus semua isi pada tabel Orderan Saat Ini
-     ✅ Proses Order: Memproses hasil order ke laporan penjualan
+     - 🗑️ Hapus Item: Menghapus item tertentu yang dipilih
+     - ➖ Kurangkan Item: Mengurangi satu item yang dipilih
+     - 🗑️ Hapus Order: Menghapus semua isi pada tabel Orderan Saat Ini
+     - ✅ Proses Order: Memproses hasil order ke laporan penjualan
 
 
 ### 📝 Manajemen Menu
@@ -59,12 +59,13 @@ Temurasa adalah sistem manajemen restoran berbasis Java dengan antarmuka grafis 
    - Stok tersedia
 
 3. Operasi CRUD - Tombol kontrol:
-    ➕ Tambah: Menambahkan nama, kategori, harga, dan stok pada Menu Items
-    ✏️ Update: Memperbarui informasi seperti nama, kategori, harga, dll
-    🗑️ Hapus: Menghapus item yang dipilih dari tabel Menu Items Details
+    - ➕ Tambah: Menambahkan nama, kategori, harga, dan stok pada Menu Items
+    - ✏️ Update: Memperbarui informasi seperti nama, kategori, harga, dll
+    - 🗑️ Hapus: Menghapus item yang dipilih dari tabel Menu Items Details
 
 ### 📊 Laporan Penjualan
-<img width="955" alt="image" src="https://github.com/user-attachments/assets/e319db80-002b-4be5-9694-e16e860264c9" />
+![image](https://github.com/user-attachments/assets/dddf41ab-ac0a-4a27-9329-9d56a9c8e5d6)
+
 
 Berisi data lengkap transaksi:
   - ID: Nomor identifikasi transaksi
